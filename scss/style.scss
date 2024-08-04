@@ -1,0 +1,99 @@
+/* import */
+@import "./modules/variables";
+@import "./modules/fonts";
+@import "./modules/mixins";
+@import "./partials/normalize";
+
+/* general */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* web accessibility */
+*:focus {
+  outline: none;
+}
+
+body.user-is-tabbing *:focus {
+  outline: 2px solid blue;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.skip-link {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  padding: 24px 48px;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  z-index: 999;
+  color: $blackColor;
+  background-color: $whiteColor;
+  border: none;
+  border-radius: 5px;
+  line-height: 0;
+  font-weight: 500;
+  font-size: 1.8rem;
+  // font-family: "Poppins", sans-serif;
+  outline: none;
+
+  &:focus,
+  &:active {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: auto;
+    overflow: visible;
+    width: auto;
+    white-space: normal;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $blackColor;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $yellowColor;
+  border-radius: 25px;  
+}
